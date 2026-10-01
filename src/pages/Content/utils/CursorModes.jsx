@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext, useMemo, useRef } from "react";
 
 import { contentStateContext } from "../context/ContentState";
 
+const KYROX_ORANGE = "#FF7A00";
+
 const CursorModes = () => {
   const [contentState, setContentState] = useContext(contentStateContext);
   const effectsRef = useRef(new Set());
@@ -147,8 +149,8 @@ const CursorModes = () => {
       height: "80px",
       pointerEvents: "none",
       zIndex: 99999999999,
-      background: "yellow",
-      opacity: ".5",
+      background: "rgba(255,122,0,0.38)",
+      opacity: ".65",
       transform: "translate(-50%, -50%)",
       borderRadius: "50%",
       animation: "none",
@@ -168,7 +170,8 @@ const CursorModes = () => {
       height: "40px",
       pointerEvents: "none",
       zIndex: 99999999999,
-      border: "3px solid red",
+      border: `4px solid ${KYROX_ORANGE}`,
+      boxShadow: "0 0 0 5px rgba(255,122,0,0.18)",
       transform: "none",
       borderRadius: "50%",
       animation: "none",
