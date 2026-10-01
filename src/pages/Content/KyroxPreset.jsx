@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { contentStateContext } from "./context/ContentState";
 
+// KYROX Recorder defaults: one branded setup, no per-recording style work.
 const KYROX_PRESET_VERSION = 1;
 const KYROX_ORANGE = "#FF7A00";
 
@@ -40,8 +41,7 @@ const KyroxPreset = () => {
       // ContentState hydrates from extension storage immediately after mount.
       // Apply the branded defaults just after that pass so the first run is
       // deterministic even when an older Screenity profile exists.
-      const timer = window.setTimeout(applyPreset, 250);
-      return () => window.clearTimeout(timer);
+      window.setTimeout(applyPreset, 250);
     });
 
     return () => {
